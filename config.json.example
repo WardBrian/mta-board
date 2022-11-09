@@ -14,7 +14,7 @@
 	"trains": {
 		"apikey": "YOUR_API_KEY_HERE",
 		"skip_next_trains": 0,
-		"num_trains": 2,
+		"num_trains": 3,
 		"stops": {
 			"6": [
 				"631N"
@@ -23,7 +23,7 @@
 	},
 	"weather": {
 		"apikey": "YOUR_API_KEY_HERE",
-		"location": "Chicago,il,us",
+        "location": "Manhattan,ny,us",
 		"metric_units": false
 	},
 	"time_format": "12h",

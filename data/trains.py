@@ -4,6 +4,7 @@ from datetime import datetime
 from tzlocal import get_localzone
 from underground import SubwayFeed
 
+
 import debug
 from data import stops
 from data.config import Config
@@ -16,9 +17,7 @@ class Trains:
     @staticmethod
     def get_trains(config):
         trains = Trains(config)
-        if trains.update(True) == UpdateStatus.SUCCESS:
-            return trains
-        return None
+        return trains, trains.update(True)
 
     def __init__(self, config: Config):
         self.starttime = time.time()
@@ -32,26 +31,39 @@ class Trains:
         if force or self.__should_update():
             debug.log("Trains should update!")
             self.starttime = time.time()
-            try:
-                _stops = []
-                for (route, stations) in self.routes:
+            _stops = []
+            failed = False
+            for (route, stations) in self.routes:
+                d = {}
+                try:
                     feed = SubwayFeed.get(route, api_key=self.api)
+                    try:
+                        d = feed.extract_stop_dict().get(route, {})
+                    except:
+                        debug.exception("Serialization error while refreshing train data")
+                except:
+                    debug.exception("Networking Error while refreshing train data")
+                    failed = True
 
-                    d = feed.extract_stop_dict().get(route, {})
-                    _stops += [Stop(route, stop, sorted(d.get(stop, [])), self.skip, self.num_trains) for stop in stations]
+                _stops += [Stop(route, stop, sorted(d.get(stop, [])), self.skip, self.num_trains) for stop in stations]
 
-                self.stops = _stops
+            self.stops = _stops
 
-                return UpdateStatus.SUCCESS
-            except:
-                debug.exception("Networking Error while refreshing train data")
+            if failed:
                 return UpdateStatus.FAIL
+
+            return UpdateStatus.SUCCESS
+
         return UpdateStatus.DEFERRED
 
     def __should_update(self):
         endtime = time.time()
         time_delta = endtime - self.starttime
         return time_delta >= TRAINS_UPDATE_RATE
+
+    def __str__(self):
+        trains = "\n\t".join(str(s) for s in self.stops)
+        return "Trains: \n\t" + trains
 
 
 class Stop:

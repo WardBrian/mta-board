@@ -1,6 +1,7 @@
 import time
 from typing import NoReturn
 
+import debug
 from data import Data
 from renderers import network, trains, weather
 
@@ -19,6 +20,7 @@ class MainRenderer:
             self.__render_trains()
 
     def __render_trains(self):
+        debug.info(self.data.trains)
         for _ in range(120):
             trains.render_trains(
                 self.canvas, self.data.config.layout, self.data.config.scoreboard_colors, self.data.trains

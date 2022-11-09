@@ -1,6 +1,6 @@
 import logging
 
-logger = logging.getLogger("mlbled")
+logger = logging.getLogger("mta-board")
 fmter = logging.Formatter("{levelname} ({asctime}): {message}", style="{", datefmt="%H:%M:%S")
 strmhdl = logging.StreamHandler()
 strmhdl.setFormatter(fmter)

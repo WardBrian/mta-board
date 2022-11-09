@@ -10,11 +10,12 @@ class Data:
         self.config = config
 
         self.weather: Weather = Weather(config)
-        self.trains: Trains = Trains.get_trains(config)
+        self.trains: Trains
+        self.trains, network = Trains.get_trains(config)
         self.dates: Dates = Dates(config)
 
         # Network status state - we use headlines and weather condition as a sort of sentinial value
-        self.network_issues: bool = (self.weather.conditions == "Error") or (not self.trains)
+        self.network_issues: bool = (self.weather.conditions == "Error") or (network != UpdateStatus.SUCCESS)
 
         # RENDER ITEMS
         self.scrolling_finished: bool = False
