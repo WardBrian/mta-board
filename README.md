@@ -4,6 +4,11 @@ Show the upcoming trains, current weather, and some coming soon days.
 
 Based on [mlb-led-scoreboard](https://github.com/WardBrian/mlb-led-scoreboard).
 
+**Note**: This is just a personal project to use on my board during the baseball offseason, I probably
+won't add any more features!
+
+## Copied README from mlb-led-scoreboard follows:
+
 Requires a Raspberry Pi and an LED board hooked up via the GPIO pins.
 
 
