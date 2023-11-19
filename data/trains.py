@@ -98,7 +98,7 @@ class Stop:
                 i += 1
                 if delta.days < 0:
                     continue
-                minutes = delta.seconds // 60
+                minutes = (delta.seconds + 30) // 60
                 times.append(minutes)
         except:
             pass
