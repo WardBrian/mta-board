@@ -22,7 +22,6 @@ class Trains:
     def __init__(self, config: Config):
         self.starttime = time.time()
         self.routes = config.routes
-        self.api = config.trains_apikey
         self.skip = config.skip_next
         self.num_trains = config.num_trains
         self.stops = []
@@ -36,7 +35,7 @@ class Trains:
             for (route, stations) in self.routes:
                 d = {}
                 try:
-                    feed = SubwayFeed.get(route, api_key=self.api)
+                    feed = SubwayFeed.get(route)
                     try:
                         d = feed.extract_stop_dict().get(route, {})
                     except:

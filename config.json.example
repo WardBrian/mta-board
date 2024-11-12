@@ -12,7 +12,6 @@
 		"date_format": "%A, %B %-d"
 	},
 	"trains": {
-		"apikey": "YOUR_API_KEY_HERE",
 		"skip_next_trains": 0,
 		"num_trains": 3,
 		"stops": {
