@@ -1,5 +1,4 @@
-from datetime import datetime, timedelta
-
+import datetime as dt
 
 class Dates:
     def __init__(self, config):
@@ -8,18 +7,22 @@ class Dates:
             self.__add_date(event, date)
 
     def next_important_date_string(self):
-        today = datetime.today()
-        date = self.next_important_date()
+        today = dt.date.today()
+        try:
+            date = self.next_important_date()
+        except Exception:
+            return ""
         days = (date["date"] - today).days
-        return "{} days until {}!".format(days, date["text"])
+        plural = 's' if days > 1 else ''
+        return f"{days} day{plural} until {date['text']}!"
 
     def next_important_date(self):
-        today = datetime.today()
+        today = dt.date.today()
         return min(
-            self.important_dates,
-            key=lambda date: date["date"] - today if (date["date"] - today).days > 0 else timedelta.max,
+            filter(lambda d: d['date'] > today, self.important_dates),
+            key=lambda d: d['date']
         )
 
     def __add_date(self, text, date):
         if date != "":
-            self.important_dates.append({"text": text, "date": datetime.strptime(date, "%Y-%m-%d")})
+            self.important_dates.append({"text": text, "date": dt.date.fromisoformat(date)})
