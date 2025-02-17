@@ -1,4 +1,5 @@
 import time
+import os
 
 import pyowm
 
@@ -102,7 +103,7 @@ class Weather:
         return "{} {}".format(self.wind_speed_string(), self.wind_dir_string())
 
     def icon_filename(self):
-        return "assets/weather/{}.png".format(self.icon_name)
+        return os.path.abspath("./assets/weather/{}.png".format(self.icon_name))
 
     def __should_update(self):
         endtime = time.time()
