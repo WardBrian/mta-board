@@ -1,10 +1,4 @@
-try:
-    from rgbmatrix import graphics
-except ImportError:
-    from RGBMatrixEmulator import graphics
-
-from utils import center_text_position
-
+from driver import graphics
 
 def render_text(canvas, x, y, width, font, text_color, bg_color, text, scroll_pos):
     if __text_should_scroll(text, font, width):

@@ -1,7 +1,4 @@
-try:
-    from rgbmatrix import graphics
-except ImportError:
-    from RGBMatrixEmulator import graphics
+from driver import graphics
 
 from data import routes
 from data.config.color import Color

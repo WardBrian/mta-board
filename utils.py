@@ -1,8 +1,3 @@
-try:
-    from rgbmatrix import RGBMatrixOptions
-except ImportError:
-    from RGBMatrixEmulator import RGBMatrixOptions
-
 import argparse
 import collections
 
@@ -116,11 +111,7 @@ def args():
         type=int,
     )
     parser.add_argument(
-        "--led-pwm-dither-bits",
-        action="store",
-        help="Time dithering of lower bits (Default: 0)",
-        default=0,
-        type=int,
+        "--led-pwm-dither-bits", action="store", help="Time dithering of lower bits (Default: 0)", default=0, type=int,
     )
     parser.add_argument(
         "--config",
@@ -129,10 +120,21 @@ def args():
         default="config",
         type=str,
     )
+    parser.add_argument(
+        "--emulated",
+        action="store_const",
+        help="Force using emulator mode over default matrix display.",
+        const=True
+    )
+    parser.add_argument(
+        "--drop-privileges", action="store_true", help="Force the matrix driver to drop root privileges after setup."
+    )
     return parser.parse_args()
 
 
 def led_matrix_options(args):
+    from driver import RGBMatrixOptions
+
     options = RGBMatrixOptions()
 
     if args.led_gpio_mapping is not None:
@@ -146,8 +148,10 @@ def led_matrix_options(args):
     options.multiplexing = args.led_multiplexing
     options.pwm_bits = args.led_pwm_bits
     options.brightness = args.led_brightness
+    options.scan_mode = args.led_scan_mode
     options.pwm_lsb_nanoseconds = args.led_pwm_lsb_nanoseconds
     options.led_rgb_sequence = args.led_rgb_sequence
+    options.drop_privileges = args.drop_privileges
 
     try:
         options.pixel_mapper_config = args.led_pixel_mapper

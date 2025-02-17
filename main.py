@@ -11,20 +11,16 @@ import time
 
 from PIL import Image
 
+
+# Important! Import the driver first to initialize it, then import submodules as needed.
+import driver
+from driver import RGBMatrix, __version__
+from utils import args, led_matrix_options
+
 import debug
 from data import Data
 from data.config import Config
 from renderers.main import MainRenderer
-from utils import args, led_matrix_options
-
-try:
-    from rgbmatrix import RGBMatrix, __version__
-
-    emulated = False
-except ImportError:
-    from RGBMatrixEmulator import RGBMatrix, version
-
-    emulated = True
 
 
 SCRIPT_NAME = "MTA Board"
@@ -44,9 +40,10 @@ def main(matrix, config_base):
     # Print some basic info on startup
     debug.info("%s - v%s (%sx%s)", SCRIPT_NAME, SCRIPT_VERSION, matrix.width, matrix.height)
 
-    if emulated:
-        debug.log("rgbmatrix not installed, falling back to emulator!")
-        debug.log("Using RGBMatrixEmulator version %s", version.__version__)
+    if driver.is_emulated():
+        if driver.hardware_load_failed:
+            debug.log("rgbmatrix not installed, falling back to emulator!")
+        debug.log("Using RGBMatrixEmulator version %s", __version__)
     else:
         debug.log("Using rgbmatrix version %s", __version__)
 
@@ -54,7 +51,7 @@ def main(matrix, config_base):
     logo_path = os.path.abspath("./assets/startup-w" + str(matrix.width) + "h" + str(matrix.height) + ".png")
 
     # see: https://github.com/ty-porter/RGBMatrixEmulator/issues/9#issuecomment-922869679
-    if os.path.exists(logo_path) and not emulated:
+    if os.path.exists(logo_path) and driver.is_hardware():
         logo = Image.open(logo_path)
         matrix.SetImage(logo.convert("RGB"))
         logo.close()
@@ -94,6 +91,6 @@ if __name__ == "__main__":
         main(matrix, config)
     except:
         debug.exception("Untrapped error in main!")
+        sys.exit(1)
     finally:
         matrix.Clear()
-        sys.exit(1)

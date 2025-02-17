@@ -1,11 +1,8 @@
-try:
-    from rgbmatrix import graphics
-except ImportError:
-    from RGBMatrixEmulator import graphics
+from driver import graphics
 
-import time
+import time, os
 
-import PIL.Image
+from PIL import Image
 
 from data.config.color import Color
 from data.config.layout import Layout
@@ -41,8 +38,14 @@ def __render_clock(canvas, layout, colors, time_format):
 def __render_weather(canvas, layout, colors, weather: Weather):
     if weather.available():
         image_file = weather.icon_filename()
-        weather_icon = PIL.Image.open(image_file)
-        __render_weather_icon(canvas, layout, colors, weather_icon)
+        try:
+            weather_icon = Image.open(image_file)
+        except Exception:
+            pass
+        else:
+            __render_weather_icon(canvas, layout, colors, weather_icon)
+            weather_icon.close()
+
         __render_weather_text(canvas, layout, colors, weather.conditions, "conditions")
         __render_weather_text(canvas, layout, colors, weather.temperature_string(), "temperature")
         __render_weather_text(canvas, layout, colors, weather.wind_speed_string(), "wind_speed")
@@ -65,7 +68,7 @@ def __render_weather_icon(canvas, layout, colors, weather_icon):
 
     if resize:
         weather_icon = weather_icon.resize(
-            (weather_icon.width * resize, weather_icon.height * resize), PIL.Image.NEAREST
+            (weather_icon.width * resize, weather_icon.height * resize), Image.NEAREST
         )
     for x in range(weather_icon.width):
         for y in range(weather_icon.height):
