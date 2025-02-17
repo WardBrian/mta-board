@@ -23,7 +23,6 @@ class Config:
 
         # Rotation
 
-        self.trains_apikey = json["trains"]["apikey"]
         self.routes = json["trains"]["stops"].items()
         self.skip_next = json["trains"]["skip_next_trains"]
         self.num_trains = json["trains"]["num_trains"]
