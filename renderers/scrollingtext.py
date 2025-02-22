@@ -1,4 +1,5 @@
 from driver import graphics
+from utils import center_text_position
 
 def render_text(canvas, x, y, width, font, text_color, bg_color, text, scroll_pos):
     if __text_should_scroll(text, font, width):
