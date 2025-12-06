@@ -24,10 +24,10 @@ class MainRenderer:
         stops = len(self.data.trains.stops)
         stops_per_page = self.data.config.layout.coords("trains")["stops_per_page"]
         for start in range(0, stops + stops_per_page - 1, stops_per_page):
-            batch = slice(start, min(start + stops_per_page, stops))
-            self.__render_train_batch(any_of(timer_cond(45), scrolling_finished_cond(self.data)), batch)
+            stop = min(start + stops_per_page, stops)
+            self.__render_train_batch(any_of(timer_cond(45), scrolling_finished_cond(self.data)), start, stop)
 
-    def __render_train_batch(self, cond, batch):
+    def __render_train_batch(self, cond, start, stop):
 
         self.data.scrolling_finished = False
         self.scrolling_text_pos = self.canvas.width
@@ -37,7 +37,9 @@ class MainRenderer:
                 self.canvas,
                 self.data.config.layout,
                 self.data.config.scoreboard_colors,
-                self.data.trains.stops[batch],
+                self.data.trains,
+                start,
+                stop,
                 self.scrolling_text_pos,
             )
             self.__update_scrolling_text_pos(pos, self.canvas.width)

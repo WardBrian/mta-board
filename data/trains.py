@@ -32,19 +32,26 @@ class Trains:
             self.starttime = time.time()
             _stops = []
             failed = False
+
+            seen = set()
             for (route, stations) in self.routes:
-                d = {}
+                if route in seen:
+                    continue
+                data = {}
                 try:
                     feed = SubwayFeed.get(route)
                     try:
-                        d = feed.extract_stop_dict().get(route, {})
+                        data = feed.extract_stop_dict()
                     except:
                         debug.exception("Serialization error while refreshing train data")
                 except:
                     debug.exception("Networking Error while refreshing train data")
                     failed = True
-
-                _stops += [Stop(route, stop, sorted(d.get(stop, [])), self.skip, self.num_trains) for stop in stations]
+                for route, _ in self.routes:
+                    if route in data:
+                        seen.add(route)
+                        d = data[route]
+                        _stops += [Stop(route, stop, sorted(d.get(stop, [])), self.skip, self.num_trains) for stop in stations]
 
             self.stops = _stops
 

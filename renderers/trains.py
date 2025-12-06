@@ -8,13 +8,14 @@ from renderers import scrollingtext
 from utils import center_text_position
 
 
-def render_trains(canvas, layout: Layout, colors: Color, stops: list[Stop], text_pos):
+def render_trains(canvas, layout: Layout, colors: Color, trains: Trains, first_stop, last_stop, text_pos):
     color = colors.color("default.background")
     canvas.Fill(color["r"], color["g"], color["b"])
 
     offset = 0
     positions = []
-    for stop in stops:
+    for t in range(first_stop, last_stop):
+        stop = trains.stops[t]
         pos, new_offset = __render_stop(canvas, layout, colors, offset, stop, text_pos)
         offset += new_offset
         positions.append(pos)
