@@ -29,7 +29,6 @@ class Trains:
     def update(self, force: bool = False):
         if force or self.__should_update():
             debug.log("Trains should update!")
-            self.starttime = time.time()
             _stops = []
             failed = False
 
@@ -66,6 +65,7 @@ class Trains:
             self.stops = _stops
 
             debug.log("Updated trains!")
+            self.starttime = time.time()
             if failed:
                 return UpdateStatus.FAIL
 
