@@ -65,6 +65,7 @@ class Trains:
 
             self.stops = _stops
 
+            debug.log("Updated trains!")
             if failed:
                 return UpdateStatus.FAIL
 
