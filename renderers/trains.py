@@ -4,19 +4,25 @@ from data import routes
 from data.config.color import Color
 from data.config.layout import Layout
 from data.trains import Stop, Trains
+from renderers import scrollingtext
 from utils import center_text_position
 
 
-def render_trains(canvas, layout: Layout, colors: Color, trains: Trains):
+def render_trains(canvas, layout: Layout, colors: Color, stops: list[Stop], text_pos):
     color = colors.color("default.background")
     canvas.Fill(color["r"], color["g"], color["b"])
 
     offset = 0
-    for stop in trains.stops:
-        offset += __render_stop(canvas, layout, offset, stop)
+    positions = []
+    for stop in stops:
+        pos, new_offset = __render_stop(canvas, layout, colors, offset, stop, text_pos)
+        offset += new_offset
+        positions.append(pos)
+
+    return max(positions)
 
 
-def __render_stop(canvas, layout, offset, stop: Stop):
+def __render_stop(canvas, layout, colors, offset, stop: Stop, text_pos):
     coords = layout.coords("trains.eta")
     font = layout.font("trains.eta")
     color = graphics.Color(255, 255, 255)
@@ -25,18 +31,24 @@ def __render_stop(canvas, layout, offset, stop: Stop):
     coords = layout.coords("trains.stop")
     font = layout.font("trains.stop")
     name = stop.stop_name()
-    text_x = center_text_position(name, coords["x"], font["size"]["width"])
-    graphics.DrawText(canvas, font["font"], text_x, coords["y"] + offset, color, name)
+    bgcolor = colors.graphics_color("default.background")
+
+    pos = scrollingtext.render_text(
+        canvas, coords["x"], coords["y"] + offset, coords["width"], font, color, bgcolor, name, text_pos
+    )
 
     coords = layout.coords("trains.line")
     __render_line(canvas, layout.font("trains.line"), coords["x"], coords["y"] + offset, coords["radius"], stop.route)
-    return layout.coords("trains")["offset"]
+    return pos, layout.coords("trains")["offset"]
 
 
 def __render_line(canvas, font, x, y, d, name):
 
     color = routes.ROUTE_COLOR[name]
-    DrawFilledCircle(canvas, x, y, d, color)
+    if routes.ROUTE_TYPE[name] == "train":
+        DrawFilledCircle(canvas, x, y, d, color)
+    else:
+        DrawFilledRectangle(canvas, x - font["size"]["width"], y - d // 2 + 1,  font["size"]["width"] * 2 + 1, d -1, color)
     text_x = center_text_position(name, x + 1, font["size"]["width"])
     color = graphics.Color(255, 255, 255)
     graphics.DrawText(canvas, font["font"], text_x, y + font["size"]["height"] // 2 - 1, color, name)
@@ -53,3 +65,9 @@ def DrawFilledCircle(canvas, x, y, d, color):
             yd = yi - (y + 0.5)
             if xd * xd + yd * yd <= r * r:
                 canvas.SetPixel(xi, yi, *color)
+
+
+def DrawFilledRectangle(canvas, x, y, width, height, color):
+    for xi in range(x, x + width):
+        for yi in range(y, y + height):
+            canvas.SetPixel(xi, yi, *color)

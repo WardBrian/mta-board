@@ -1,0 +1,629 @@
+route_id,route_long_name,route_color,route_type
+A,8 Avenue Express,0062CF,train
+C,8 Avenue Local,0062CF,train
+E,8 Avenue Local,0062CF,train
+B,6 Avenue Express,EB6800,train
+D,6 Avenue Express,EB6800,train
+F,Queens Blvd Express/6 Av Local,EB6800,train
+FX,Brooklyn F Express,EB6800,train
+M,Queens Blvd Local/6 Av Local,EB6800,train
+G,Brooklyn-Queens Crosstown,799534,train
+J,Nassau St Local,8E5C33,train
+Z,Nassau St Express,8E5C33,train
+L,14 St-Canarsie Local,7C858C,train
+N,Broadway Local,F6BC26,train
+Q,Broadway Express,F6BC26,train
+R,Broadway Local,F6BC26,train
+W,Broadway Local,F6BC26,train
+GS,42 St Shuttle,7C858C,train
+FS,Franklin Avenue Shuttle,7C858C,train
+H,Rockaway Park Shuttle,7C858C,train
+1,Broadway - 7 Avenue Local,D82233,train
+2,7 Avenue Express,D82233,train
+3,7 Avenue Express,D82233,train
+4,Lexington Avenue Express,009952,train
+5,Lexington Avenue Express,009952,train
+6,Lexington Avenue Local,009952,train
+6X,Pelham Bay Park Express,009952,train
+7,Flushing Local,9A38A1,train
+7X,Flushing Express,9A38A1,train
+SI,Staten Island Railway,08179C,train
+B1,Bay Ridge - Manhattan Beach,00AEEF,bus
+B11,Sunset Park - Midwood,006CB7,bus
+B12,Lefferts Gardens - East New York,6CBE45,bus
+B13,Spring Creek - Wyckoff Hospital,FAA61A,bus
+B14,Spring Creek - Crown Heights,00AEEF,bus
+B15,Bedford Stuyvesant - JFK AirTrain,B933AD,bus
+B16,Bay Ridge - Lefferts Gardens,FAA61A,bus
+B17,Canarsie - Crown Heights,B933AD,bus
+B2,Kings Hwy Station - Kings Plaza,006CB7,bus
+B20,Ridgewood - Spring Creek,6CBE45,bus
+B24,Williamsburg - Greenpoint,FAA61A,bus
+B25,Dwntn Bklyn & DUMBO - Broadway Junction,6CBE45,bus
+B26,Downtown Brooklyn - Ridgewood,006CB7,bus
+B3,Bensonhurst - Bergen Beach,EE352E,bus
+B31,Gerritsen Beach - Kings Hwy Station,FAA61A,bus
+B32,Williamsburg - Long Island City,006CB7,bus
+B35,Brownsville - Sunset Park,EE352E,bus
+B36,Sheepshead Bay - Coney Island,FAA61A,bus
+B37,Downtown Brooklyn - Bay Ridge,B933AD,bus
+B38,Ridgewood - Downtown Brooklyn,00AEEF,bus
+B39,Williamsburg Bridge Plaza - Lower East Side,00AEEF,bus
+B4,Bay Ridge - Sheepshead Bay,6CBE45,bus
+B41,Kings Plaza - Downtown Brooklyn,006CB7,bus
+B42,Canarsie Pier - Rockaway Parkway Station,006CB7,bus
+B43,Greenpoint - Lefferts Gardens,EE352E,bus
+B44,Sheepshead Bay - Williamsburg,B933AD,bus
+B44+,Sheepshead Bay - Williamsburg,B933AD,bus
+B45,Downtown Brooklyn - Crown Heights,EE352E,bus
+B46,Kings Plaza - Williamsburg,6CBE45,bus
+B46+,Kings Plaza - Williamsburg,6CBE45,bus
+B47,Kings Plaza - Bedford-Stuyvesant,FAA61A,bus
+B48,Lefferts Gardens - Greenpoint,6CBE45,bus
+B49,Manhattan Beach - Bedford-Stuyvesant,EE352E,bus
+B52,Downtown Brooklyn - Ridgewood,EE352E,bus
+B54,Downtown Brooklyn - Ridgewood,6CBE45,bus
+B57,Gowanus - Maspeth,EE352E,bus
+B6,Bath Beach - East New York,EE352E,bus
+B60,Williamsburg - Canarsie,B933AD,bus
+B61,Park Slope - Downtown Brooklyn,6CBE45,bus
+B62,Astoria - Downtown Brooklyn,00AEEF,bus
+B63,Bay Ridge - Cobble Hill,006CB7,bus
+B64,Bay Ridge - Coney Island,6CBE45,bus
+B65,Downtown Brooklyn - Crown Heights,00AEEF,bus
+B67,Brooklyn Navy Yard - Kensington,EE352E,bus
+B68,Coney Island - Windsor Terrace,EE352E,bus
+B69,Downtown Brooklyn - Kensington,006CB7,bus
+B7,Midwood - Bedford-Stuyvesant,EE352E,bus
+B70,Dyker Heights - Sunset Park,B933AD,bus
+B74,Sea Gate - Stillwell Av,EE352E,bus
+B8,Dyker Heights - East Flatbush,FAA61A,bus
+B82,Coney Island - Spring Creek Towers,6CBE45,bus
+B82+,Coney Island -spring Creek Towers,6CBE45,bus
+B83,Spring Creek - Broadway Junction,EE352E,bus
+B84,Spring Creek-New Lots,006CB7,bus
+B9,Bay Ridge - Kings Plaza,EE352E,bus
+BX3,Riverdale - George Washington Bridge,EE352E,bus
+BX4,Westchester Sq - The Hub,FAA61A,bus
+BX4A,Westchester Sq - Gladstone Sq,FAA61A,bus
+BX5,Pelham Bay - Gladstone Sq,EE352E,bus
+BX6,Hunts Point - Riverside Dr,EE352E,bus
+BX6+,Hunts Point - Riverside Dr,EE352E,bus
+BX7,Riverdale - Washington Heights,EE352E,bus
+BX8,Williamsbridge - Locust Point,FAA61A,bus
+BX9,Riverdale - West Farms Sq,FAA61A,bus
+BX1,Riverdale - Mott Haven,00AEEF,bus
+BX10,Riverdale - Norwood,006CB7,bus
+BX11,George Washington Bridge - Parkchester,FAA61A,bus
+BX12,Pelham Bay - Inwood,006CB7,bus
+BX12+,Bay Plaza - Inwood,006CB7,bus
+BX13,George Washington Bridge - Bronx Terminal Market,006CB7,bus
+BX15,Fordham Plaza - The Hub,FAA61A,bus
+BX16,Pelham - Norwood,00AEEF,bus
+BX17,Fordham Plaza - Port Morris,006CB7,bus
+BX18B,Morris Heights/High Bridge Circulator,6CBE45,bus
+BX18A,Morris Heights/High Bridge Circulator,6CBE45,bus
+BX19,NY Botanical Garden - Riverbank Park,B933AD,bus
+BX2,Kingsbridge Heights - Mott Haven,FAA61A,bus
+BX20,Riverdale - Inwood,00AEEF,bus
+BX21,Westchester Sq - Mott Haven,6CBE45,bus
+BX22,Bedford Park - Castle Hill,EE352E,bus
+BX24,Country Club - Hutchinson Metro Center,6CBE45,bus
+BX25,Co-op City Bay Plaza - Bedford Park,FAA61A,bus
+BX26,Co-op City Section 5 - Bedford Park,FAA61A,bus
+BX27,Clasons Pt - Gladstone Sq,00AEEF,bus
+BX28,Co-op City Section 5 - Fordham Center,00AEEF,bus
+BX29,City Island - Pelham Bay,00AEEF,bus
+BX30,Co-op City Section 5 - Pelham Parkway,EE352E,bus
+BX31,Woodlawn - Westchester Sq,EE352E,bus
+BX32,Kingsbridge VA Hospital - Mott Haven,6CBE45,bus
+BX33,Port Morris - Harlem,6CBE45,bus
+BX34,Woodlawn - Fordham Center,B933AD,bus
+BX35,George Washington Bridge-West Farms Road,00AEEF,bus
+BX36,Soundview - George Washington Bridge,B933AD,bus
+BX38,Co-op City Bay Plaza - Norwood,FAA61A,bus
+BX39,Wakefield - Clasons Pt,FAA61A,bus
+BX40,Throgs Neck - River Park Towers,006CB7,bus
+BX41,Williamsbridge - The Hub,EE352E,bus
+BX41+,Williamsbridge - The Hub,EE352E,bus
+BX42,Throgs Neck - River Park Towers,EE352E,bus
+BX46,Prospect Av - Westchester Av / Hunts Point Market,EE352E,bus
+M1,Harlem - East Village,EE352E,bus
+M2,Washington Heights - East Village,B933AD,bus
+M3,Fort George - East Village,B933AD,bus
+M4,The Cloisters - 32 St,00AEEF,bus
+M5,George Washington Bridge - 31 St & 6 Av,EE352E,bus
+M7,Harlem - 14th Street,00AEEF,bus
+M8,West Village - East Village,00AEEF,bus
+M9,Battery Park City - Kips Bay,B933AD,bus
+M10,Harlem - Columbus Circle,006CB7,bus
+M100,Inwood - Harlem,00AEEF,bus
+M101,East Village - Fort George,FAA61A,bus
+M102,Harlem - East Village,FAA61A,bus
+M103,East Harlem - City Hall,B933AD,bus
+M104,West Harlem - Times Square,B933AD,bus
+M106,East Harlem - West Side,6CBE45,bus
+M11,Riverbank Park & Harlem - West Village,FAA61A,bus
+M116,West Side - East Harlem,6CBE45,bus
+M12,Midtown West - West Village,006CB7,bus
+M125,Manhattanville - The Hub,B933AD,bus
+M14A+,Lower East Side - Abingdon Sq,6CBE45,bus
+M14D+,Lower East Side - Chelsea Piers,6CBE45,bus
+M15,East Harlem - South Ferry,006CB7,bus
+M15+,East Harlem - South Ferry,006CB7,bus
+M20,Lincoln Center - South Ferry,EE352E,bus
+M21,Lower East Side - West Village,FAA61A,bus
+M22,Lower East Side - Battery Park City,00AEEF,bus
+M23+,Chelsea Piers - East Side,B933AD,bus
+M31,Yorkville - Clinton,B933AD,bus
+M34+,East Side - Javits Center,006CB7,bus
+M34A+,Waterside - Port Authority Terminal,006CB7,bus
+M35,Ward's Island - East Harlem,FAA61A,bus
+M42,United Nations - W 42 St Pier,EE352E,bus
+M50,W 42 St Pier - East Side,6CBE45,bus
+M55,W 44 St  - South Ferry,6CBE45,bus
+M57,East Side - West Side,00AEEF,bus
+M60+,West Side - LaGuardia Airport,EE352E,bus
+M66,East Side - Lincoln Center,FAA61A,bus
+M72,East Side - West Side,6CBE45,bus
+M79+,Yorkville - West Side,EE352E,bus
+M86+,Yorkville - West Side,FAA61A,bus
+M96,East Side - West Side,6CBE45,bus
+M98,Washington Heights - Upper East Side LTD,EE352E,bus
+Q1,Bellerose - Jamaica,FAA61A,bus
+Q2,Queens Village - Jamaica,6CBE45,bus
+Q3,Jamaica - JFK Airport,00AEEF,bus
+Q4,Cambria Heights - Jamaica,EE352E,bus
+Q5,Laurelton - Jamaica,EE352E,bus
+Q12,Little Neck - Flushing,EE352E,bus
+Q13,Fort Totten - Flushing,EE352E,bus
+Q15,Flushing - Beechhurst,FAA61A,bus
+Q16,Fort Totten - Flushing,EE352E,bus
+Q17,Flushing - Jamaica,EE352E,bus
+Q24,Bedford Stuyvesant - Jamaica,00AEEF,bus
+Q27,Cambria Heights - Flushing,EE352E,bus
+Q30,Little Neck - Jamaica,FAA61A,bus
+Q31,Bayside - Jamaica,FAA61A,bus
+Q36,Little Neck - Jamaica,FAA61A,bus
+Q42,Addisleigh Park - Jamaica,00AEEF,bus
+Q43,Floral Park - Jamaica,EE352E,bus
+Q44+,Bronx Zoo - Jamaica,EE352E,bus
+Q46,LIJ Hospital - Kew Gardens,EE352E,bus
+Q48,Glen Oaks - Kew Gardens,006CB7,bus
+Q54,Williamsburg - Jamaica,B933AD,bus
+Q55,Ridgewood - Richmond Hill,EE352E,bus
+Q56,Broadway Junction - Jamaica,B933AD,bus
+Q58,Ridgewood - Flushing,6CBE45,bus
+Q59,Williamsburg - Rego Park,FAA61A,bus
+Q76,College Point - Jamaica,6CBE45,bus
+Q77,Springfield Gardens - Jamaica,FAA61A,bus
+Q82,Jamaica - Belmont Park,FAA61A,bus
+Q83,Cambria Heights - Jamaica,6CBE45,bus
+Q84,Laurelton - Jamaica,B933AD,bus
+Q85,Rosedale - Jamaica,EE352E,bus
+Q88,Elmhurst - Queens Village,FAA61A,bus
+SIM1,Eltingville - Lower Manhattan Express,00933C,bus
+SIM1C,Eltingville - Manhattan Express,00933C,bus
+SIM2,Tottenville - Lower Manhattan Express,00933C,bus
+SIM3,Pt. Richmond - Midtown Manhattan Express,00933C,bus
+SIM3C,Pt. Richmond - Manhattan Express,00933C,bus
+SIM4,Eltingville - Lower Manhattan Express,00933C,bus
+SIM4X,S.I. Mall - Lower Manhattan Express,00933C,bus
+SIM4C,Huguenot - Manhattan Express,00933C,bus
+SIM5,Eltingville - Lower Manhattan Express,00933C,bus
+SIM6,Eltingville - Midtown Manhattan Express,00933C,bus
+SIM7,Eltingville - Greenwich Village Express,00933C,bus
+SIM8,Huguenot - Midtown Manhattan Express,00933C,bus
+SIM8X,S.I. Mall - Midtown Manhattan Express,00933C,bus
+SIM9, Eltingville - Greenwich Village Express,00933C,bus
+SIM10, Eltingville - Midtown Manhattan Express,00933C,bus
+SIM11, New Dorp - Midtown Manhattan Express,00933C,bus
+SIM15, Eltingville - Lower Manhattan Express,00933C,bus
+SIM22, Eltingville - Midtown Manhattan Express,00933C,bus
+SIM23, Annadale - Midtown Manhattan Express,00933C,bus
+SIM24, Prince's Bay - Midtown Manhattan Express,00933C,bus
+SIM25, Tottenville - Midtown Manhattan Express,00933C,bus
+SIM26, Tottenville - Midtown Manhattan Express,00933C,bus
+SIM30, Sunnyside - Midtown Manhattan Express,00933C,bus
+SIM31, Eltingville - Midtown Manhattan Express,00933C,bus
+SIM32, Travis - Lower Manhattan Express,00933C,bus
+SIM33, Mariners Harbor - Manhattan Express,00933C,bus
+SIM33C, Mariners Harbor - Greenwich Village Express,00933C,bus
+SIM34, Mariners Harbor - Lower Manhattan Express,00933C,bus
+SIM35, Port Richmond - Lower Manhattan Express,00933C,bus
+S40,St. George - Amazon,B933AD,bus
+S42,St. George - Clyde Place,00AEEF,bus
+S44,St. George - Staten Island Mall,FAA61A,bus
+S46,St. George - West Shore Plaza,006CB7,bus
+S48,St. George - Mariners Harbor,EE352E,bus
+S51,St. George - Grant City,006CB7,bus
+S52,St. George - Staten Island Univ. Hospital,B933AD,bus
+S53,Port Richmond - Bay Ridge,EE352E,bus
+S54,West New Brighton - Eltingville,FAA61A,bus
+S55,Rossville - Staten Island Mall,FAA61A,bus
+S56,Huguenot - Staten Island Mall,6CBE45,bus
+S57,Port Richmond - New Dorp,6CBE45,bus
+S59,Port Richmond - Tottenville,EE352E,bus
+S61,St. George - Staten Island Mall,EE352E,bus
+S62,St. George - Travis,B933AD,bus
+S66,St. George - Port Richmond,6CBE45,bus
+S74,St. George - Bricktown Mall,EE352E,bus
+S76,St. George - Oakwood,B933AD,bus
+S78,St. George - Bricktown Mall,FAA61A,bus
+S79+,Staten Island Mall - Bay Ridge,006CB7,bus
+S81,St. George - Grant City LTD,006CB7,bus
+S84,St. George - Bricktown Mall LTD,EE352E,bus
+S86,St. George - Oakwood LTD,B933AD,bus
+S89,Eltingville - Bayonne LTD,EE352E,bus
+S90,St. George - Amazon,B933AD,bus
+S91,St. George - Staten Island Mall LTD,EE352E,bus
+S92,St. George - Travis LTD,B933AD,bus
+S93,College of Staten Island - Bay Ridge LTD,EE352E,bus
+S94,St. George - Staten Island Mall LTD,FAA61A,bus
+S96,St. George - West Shore Plaza LTD,006CB7,bus
+S98,St. George - Mariners Harbor LTD,EE352E,bus
+X27,Bay Ridge - Manhattan Express,00933C,bus
+X28,Sea Gate / Bensonhurst - Manhattan Express,00933C,bus
+X37,Bay Ridge - Midtown Manhattan Express,00933C,bus
+X38,Sea Gate / Bensonhurst - Midtown Manhattan Express,00933C,bus
+D99,Stillwell Terminal - Bay 50 St,EE352E,bus
+J99,121 St Station - Jamaica Van Wyck Station,EE352E,bus
+J90,J Shuttle Bus - Crescent St - Jamaica Van Wyck Station ,EE352E,bus
+B90,F Shuttle Bus - Church Av - Stillwell Av,EE352E,bus
+D90,D Shuttle Bus - Mosholu Pkwy #4 - 205 St,EE352E,bus
+L92,L Shuttle Bus - Abingdon Sq - FDR Drive,EE352E,bus
+L90,L Shuttle Bus - Lorimer St - Myrtle Wyckoff Avs,EE352E,bus
+M90,M Shuttle Bus - Metropolitan Av - Myrtle Av,EE352E,bus
+Q90,Flushing - LaGuardia Airport,EE352E,bus
+Q92,7 Shuttle Bus - Times Square - Hudson Yards,00933C,bus
+Q93,7 Shuttle Bus - Queensboro Plz - Vernon Bl-Jackson Av,6CBE45,bus
+Q107,7 Shuttle Bus - 74 St/Roosevelt Av - Queens Plaza,6CBE45,bus
+Q108,N Shuttle Bus - 39 Av - Queens Plaza,6CBE45,bus
+B96,2 Shuttle Bus - Flatbush Ave - Franklin Ave,6CBE45,bus
+B98,G Shuttle Bus - Bedford/Nostrand Av - Court Sq,6CBE45,bus
+Q96,E Shuttle Bus - 21 St/Queensbridge - Court Sq,6CBE45,bus
+L1227,L Shuttle Bus-Broadway Junction and Myrtle-Wyckoff,EE352E,bus
+L0719,L Shuttle Bus-Marcy Avenue and Lorimer Street,EE352E,bus
+L0202,L Shuttle Bus-Myrtle-Wyckoff Avenue and Lorimer Street,EE352E,bus
+F1, CULVER LINK F Shuttle Bus-Church Avenue and McDonald Avenue,EE352E,bus
+M191,191 ST Shuttle Loop,EE352E,bus
+S96B1,1 Shuttle Bus-Broadway/137St and Central Park West/110 St,EE352E,bus
+S96B2,2 Shuttle Bus-149 St/Grand Concourse and Central Park West/110 St,EE352E,bus
+S96B3,3 Shuttle Bus-148 St/3rd Av and Central Park West/110 St,EE352E,bus
+L91,L Shuttle Bus - Broadway Junction - Rockaway Parkway,6CBE45,bus
+BX90,5 Shuttle Bus - East 180 St - Dyre Ave,EE352E,bus
+B93,G Shuttle Bus - Jay St / Metro Tech - Bedford Av / Nostrand Av,6CBE45,bus
+B94,G Shuttle Bus - Nassau Avenue - Court Square,6CBE45,bus
+B99,3 Shuttle Bus - Utica Avenue - New Lots Avenue,6CBE45,bus
+B101,Franklin Ave Shuttle Bus - Franklin Av - Park Place,6CBE45,bus
+BX92,2 Shuttle Bus - 135 St and 3 Av-149 St,6CBE45,bus
+Q98,Ridgewood - Flushing,6CBE45,bus
+B106,J Shuttle Bus - Hewes St & Essex St,6CBE45,bus
+BX95,4 Shuttle Bus - Kingsbridge Rd and Woodlawn,6CBE45,bus
+B111,L Shuttle Bus - Atlantic Av and Myrtle-Wyckoff Avenues,6CBE45,bus
+Q38,Rego Park - Maspeth,FAA61A,bus
+Q20,College Point - Jamaica,FAA61A,bus
+Q61,Beechhurst - Flushing,B933AD,bus
+Q89,Green Acres - Jamaica,B933AD,bus
+Q87,Green Acres - Jamaica,B933AD,bus
+Q86,Rosedale - Jamaica,B933AD,bus
+QM63,Rosedale - Midtown Express,00933C,bus
+QM64,Elmont - Midtown Express,00933C,bus
+QM68,Floral Park - Midtown Express,00933C,bus
+Q45,Fresh Meadows - Kew Gardens,EE352E,bus
+Q75,Jamaica - QCC,00AEEF,bus
+Q39,Long Island City - Glendale,FAA61A,bus
+Q29,Elmhurst - Glendale,FAA61A,bus
+Q67,Long Island City - Middle Village,FAA61A,bus
+Q14,East Elmhurst - Ridgewood,00AEEF,bus
+B1,Bay Ridge - Manhattan Beach,61AD3C,bus
+B11,Sunset Park - Midwood,61AD3C,bus
+B12,Lefferts Gardens - East New York,61AD3C,bus
+B13,Spring Creek - Wyckoff Hospital,61AD3C,bus
+B14,Spring Creek - Crown Heights,61AD3C,bus
+B15,Bedford Stuyvesant - JFK AirTrain,61AD3C,bus
+B16,Bay Ridge - Lefferts Gardens,61AD3C,bus
+B17,Canarsie - Crown Heights,61AD3C,bus
+B2,Kings Hwy Station - Kings Plaza,61AD3C,bus
+B20,Ridgewood - Spring Creek,61AD3C,bus
+B24,Williamsburg - Greenpoint,61AD3C,bus
+B25,Dwntn Bklyn & DUMBO - Broadway Junction,61AD3C,bus
+B26,Downtown Brooklyn - Ridgewood,61AD3C,bus
+B3,Bensonhurst - Bergen Beach,61AD3C,bus
+B31,Gerritsen Beach - Kings Hwy Station,61AD3C,bus
+B32,Williamsburg - Long Island City,61AD3C,bus
+B35,Brownsville - Sunset Park,61AD3C,bus
+B36,Sheepshead Bay - Coney Island,61AD3C,bus
+B37,Downtown Brooklyn - Bay Ridge,61AD3C,bus
+B38,Ridgewood - Downtown Brooklyn,61AD3C,bus
+B39,Williamsburg Bridge Plaza - Lower East Side,61AD3C,bus
+B4,Bay Ridge - Sheepshead Bay,61AD3C,bus
+B41,Kings Plaza - Downtown Brooklyn,61AD3C,bus
+B42,Canarsie Pier - Rockaway Parkway Station,61AD3C,bus
+B43,Greenpoint - Lefferts Gardens,61AD3C,bus
+B44,Sheepshead Bay - Williamsburg,61AD3C,bus
+B44+,Sheepshead Bay - Williamsburg,006CB7,bus
+B45,Downtown Brooklyn - Crown Heights,61AD3C,bus
+B46,Kings Plaza - Williamsburg,61AD3C,bus
+B46+,Kings Plaza - Williamsburg,006CB7,bus
+B47,Kings Plaza - Bedford-Stuyvesant,61AD3C,bus
+B48,Lefferts Gardens - Greenpoint,61AD3C,bus
+B49,Manhattan Beach - Bedford-Stuyvesant,61AD3C,bus
+B52,Downtown Brooklyn - Ridgewood,61AD3C,bus
+B54,Downtown Brooklyn - Ridgewood,61AD3C,bus
+B57,Gowanus - Maspeth,61AD3C,bus
+B6,Bath Beach - East New York,61AD3C,bus
+B60,Williamsburg - Canarsie,61AD3C,bus
+B61,Park Slope - Downtown Brooklyn,61AD3C,bus
+B62,Astoria - Downtown Brooklyn,61AD3C,bus
+B63,Bay Ridge - Cobble Hill,61AD3C,bus
+B64,Bay Ridge - Coney Island,61AD3C,bus
+B65,Downtown Brooklyn - Crown Heights,61AD3C,bus
+B67,Brooklyn Navy Yard - Kensington,61AD3C,bus
+B68,Coney Island - Windsor Terrace,61AD3C,bus
+B69,Downtown Brooklyn - Kensington,61AD3C,bus
+B7,Midwood - Bedford-Stuyvesant,61AD3C,bus
+B70,Dyker Heights - Sunset Park,61AD3C,bus
+B74,Sea Gate - Stillwell Av,61AD3C,bus
+B8,Dyker Heights - East Flatbush,61AD3C,bus
+B82,Coney Island - Spring Creek Towers,61AD3C,bus
+B82+,Coney Island -spring Creek Towers,006CB7,bus
+B83,Spring Creek - Broadway Junction,61AD3C,bus
+B84,Spring Creek-New Lots,61AD3C,bus
+B9,Bay Ridge - Kings Plaza,61AD3C,bus
+BX3,Riverdale - George Washington Bridge,61AD3C,bus
+BX4,Westchester Sq - The Hub,61AD3C,bus
+BX4A,Westchester Sq - Gladstone Sq,61AD3C,bus
+BX5,Pelham Bay - Gladstone Sq,61AD3C,bus
+BX6,Hunts Point - Riverside Dr,61AD3C,bus
+BX6+,Hunts Point - Riverside Dr,006CB7,bus
+BX7,Riverdale - Washington Heights,61AD3C,bus
+BX8,Williamsbridge - Locust Point,61AD3C,bus
+BX9,Riverdale - West Farms Sq,61AD3C,bus
+BX1,Riverdale - Mott Haven,61AD3C,bus
+BX10,Riverdale - Norwood,61AD3C,bus
+BX11,George Washington Bridge - Parkchester,61AD3C,bus
+BX12,Pelham Bay - Inwood,61AD3C,bus
+BX13,George Washington Bridge - Bronx Terminal Market,61AD3C,bus
+BX15,Fordham Plaza - The Hub,61AD3C,bus
+BX16,Pelham - Norwood,61AD3C,bus
+BX17,Fordham Plaza - Port Morris,61AD3C,bus
+BX18B,Morris Heights/High Bridge Circulator,61AD3C,bus
+BX18A,Morris Heights/High Bridge Circulator,61AD3C,bus
+BX19,NY Botanical Garden - Riverbank Park,61AD3C,bus
+BX2,Kingsbridge Heights - Mott Haven,61AD3C,bus
+BX20,Riverdale - Inwood,61AD3C,bus
+BX21,Westchester Sq - Mott Haven,61AD3C,bus
+BX22,Bedford Park - Castle Hill,61AD3C,bus
+BX24,Country Club - Hutchinson Metro Center,61AD3C,bus
+BX25,Co-op City Bay Plaza - Bedford Park,61AD3C,bus
+BX26,Co-op City Section 5 - Bedford Park,61AD3C,bus
+BX27,Clasons Pt - Gladstone Sq,61AD3C,bus
+BX28,Co-op City Section 5 - Fordham Center,61AD3C,bus
+BX29,City Island - Pelham Bay,61AD3C,bus
+BX30,Co-op City Section 5 - Pelham Parkway,61AD3C,bus
+BX31,Woodlawn - Westchester Sq,61AD3C,bus
+BX32,Kingsbridge VA Hospital - Mott Haven,61AD3C,bus
+BX33,Port Morris - Harlem,61AD3C,bus
+BX34,Woodlawn - Fordham Center,61AD3C,bus
+BX35,George Washington Bridge-West Farms Road,61AD3C,bus
+BX36,Soundview - George Washington Bridge,61AD3C,bus
+BX38,Co-op City Bay Plaza - Norwood,61AD3C,bus
+BX39,Wakefield - Clasons Pt,61AD3C,bus
+BX40,Throgs Neck - River Park Towers,61AD3C,bus
+BX41,Williamsbridge - The Hub,61AD3C,bus
+BX41+,Williamsbridge - The Hub,006CB7,bus
+BX42,Throgs Neck - River Park Towers,61AD3C,bus
+BX46,Prospect Av - Westchester Av / Hunts Point Market,61AD3C,bus
+M1,Harlem - East Village,61AD3C,bus
+M2,Washington Heights - East Village,61AD3C,bus
+M3,Fort George - East Village,61AD3C,bus
+M4,The Cloisters - 32 St,61AD3C,bus
+M5,George Washington Bridge - 31 St & 6 Av,61AD3C,bus
+M7,Harlem - 14th Street,61AD3C,bus
+M8,West Village - East Village,61AD3C,bus
+M9,Battery Park City - Kips Bay,61AD3C,bus
+M10,Harlem - Columbus Circle,61AD3C,bus
+M100,Inwood - Harlem,61AD3C,bus
+M101,East Village - Fort George,61AD3C,bus
+M102,Harlem - East Village,61AD3C,bus
+M103,East Harlem - City Hall,61AD3C,bus
+M104,West Harlem - Times Square,61AD3C,bus
+M106,East Harlem - West Side,61AD3C,bus
+M11,Riverbank Park & Harlem - West Village,61AD3C,bus
+M116,West Side - East Harlem,61AD3C,bus
+M12,Midtown West - West Village,61AD3C,bus
+M125,Manhattanville - The Hub,61AD3C,bus
+M14A+,Lower East Side - Abingdon Sq,006CB7,bus
+M14D+,Lower East Side - Chelsea Piers,006CB7,bus
+M15,East Harlem - South Ferry,61AD3C,bus
+M20,Lincoln Center - South Ferry,61AD3C,bus
+M21,Lower East Side - West Village,61AD3C,bus
+M22,Lower East Side - Battery Park City,61AD3C,bus
+M23+,Chelsea Piers - East Side,006CB7,bus
+M31,Yorkville - Clinton,61AD3C,bus
+M35,Ward's Island - East Harlem,61AD3C,bus
+M42,United Nations - W 42 St Pier,61AD3C,bus
+M50,W 42 St Pier - East Side,61AD3C,bus
+M55,W 44 St  - South Ferry,61AD3C,bus
+M57,East Side - West Side,61AD3C,bus
+M60+,West Side - LaGuardia Airport,006CB7,bus
+M66,East Side - Lincoln Center,61AD3C,bus
+M72,East Side - West Side,61AD3C,bus
+M79+,Yorkville - West Side,006CB7,bus
+M86+,Yorkville - West Side,006CB7,bus
+M96,East Side - West Side,61AD3C,bus
+Q1,Bellerose - Jamaica,61AD3C,bus
+Q2,Queens Village - Jamaica,B933AD,bus
+Q3,Jamaica - JFK Airport,61AD3C,bus
+Q4,Cambria Heights - Jamaica,B933AD,bus
+Q5,Laurelton - Jamaica,61AD3C,bus
+Q12,Little Neck - Flushing,61AD3C,bus
+Q13,Fort Totten - Flushing,B933AD,bus
+Q15,Flushing - Beechhurst,61AD3C,bus
+Q16,Fort Totten - Flushing,61AD3C,bus
+Q17,Flushing - Jamaica,61AD3C,bus
+Q24,Bedford Stuyvesant - Jamaica,61AD3C,bus
+Q27,Cambria Heights - Flushing,B933AD,bus
+Q30,Little Neck - Jamaica,B933AD,bus
+Q31,Bayside - Jamaica,61AD3C,bus
+Q36,Little Neck - Jamaica,B933AD,bus
+Q42,Addisleigh Park - Jamaica,61AD3C,bus
+Q43,Floral Park - Jamaica,B933AD,bus
+Q44+,Bronx Zoo - Jamaica,006CB7,bus
+Q46,LIJ Hospital - Kew Gardens,B933AD,bus
+Q48,Glen Oaks - Kew Gardens,B933AD,bus
+Q54,Williamsburg - Jamaica,61AD3C,bus
+Q55,Ridgewood - Richmond Hill,61AD3C,bus
+Q56,Broadway Junction - Jamaica,61AD3C,bus
+Q58,Ridgewood - Flushing,61AD3C,bus
+Q59,Williamsburg - Rego Park,61AD3C,bus
+Q76,College Point - Jamaica,61AD3C,bus
+Q77,Springfield Gardens - Jamaica,B933AD,bus
+Q82,Jamaica - Belmont Park,B933AD,bus
+Q83,Cambria Heights - Jamaica,61AD3C,bus
+Q85,Rosedale - Jamaica,B933AD,bus
+Q88,Elmhurst - Queens Village,61AD3C,bus
+S40,St. George - Amazon,61AD3C,bus
+S42,St. George - Clyde Place,61AD3C,bus
+S44,St. George - Staten Island Mall,61AD3C,bus
+S46,St. George - West Shore Plaza,61AD3C,bus
+S48,St. George - Mariners Harbor,61AD3C,bus
+S51,St. George - Grant City,61AD3C,bus
+S52,St. George - Staten Island Univ. Hospital,61AD3C,bus
+S53,Port Richmond - Bay Ridge,61AD3C,bus
+S54,West New Brighton - Eltingville,61AD3C,bus
+S55,Rossville - Staten Island Mall,61AD3C,bus
+S56,Huguenot - Staten Island Mall,61AD3C,bus
+S57,Port Richmond - New Dorp,61AD3C,bus
+S59,Port Richmond - Tottenville,61AD3C,bus
+S61,St. George - Staten Island Mall,61AD3C,bus
+S62,St. George - Travis,61AD3C,bus
+S66,St. George - Port Richmond,61AD3C,bus
+S74,St. George - Bricktown Mall,61AD3C,bus
+S76,St. George - Oakwood,61AD3C,bus
+S78,St. George - Bricktown Mall,61AD3C,bus
+S81,St. George - Grant City LTD,EE352E,bus
+S86,St. George - Oakwood LTD,EE352E,bus
+S90,St. George - Amazon,61AD3C,bus
+S92,St. George - Travis LTD,EE352E,bus
+S94,St. George - Staten Island Mall LTD,EE352E,bus
+S96,St. George - West Shore Plaza LTD,EE352E,bus
+Q92,7 Shuttle Bus - Times Square - Hudson Yards,EE352E,bus
+Q93,7 Shuttle Bus - Queensboro Plz - Vernon Bl-Jackson Av,EE352E,bus
+Q107,7 Shuttle Bus - 74 St/Roosevelt Av - Queens Plaza,EE352E,bus
+Q108,N Shuttle Bus - 39 Av - Queens Plaza,EE352E,bus
+B96,2 Shuttle Bus - Flatbush Ave - Franklin Ave,EE352E,bus
+B98,G Shuttle Bus - Bedford/Nostrand Av - Court Sq,EE352E,bus
+Q96,E Shuttle Bus - 21 St/Queensbridge - Court Sq,EE352E,bus
+L91,L Shuttle Bus - Broadway Junction - Rockaway Parkway,EE352E,bus
+B93,G Shuttle Bus - Jay St / Metro Tech - Bedford Av / Nostrand Av,EE352E,bus
+B94,G Shuttle Bus - Nassau Avenue - Court Square,EE352E,bus
+B99,3 Shuttle Bus - Utica Avenue - New Lots Avenue,EE352E,bus
+B101,Franklin Ave Shuttle Bus - Franklin Av - Park Place,EE352E,bus
+BX92,2 Shuttle Bus - 135 St and 3 Av-149 St,EE352E,bus
+Q98,Ridgewood - Flushing,EE352E,bus
+B106,J Shuttle Bus - Hewes St & Essex St,EE352E,bus
+BX95,4 Shuttle Bus - Kingsbridge Rd and Woodlawn,EE352E,bus
+B111,L Shuttle Bus - Atlantic Av and Myrtle-Wyckoff Avenues,EE352E,bus
+Q38,Rego Park - Maspeth,61AD3C,bus
+Q20,College Point - Jamaica,61AD3C,bus
+Q61,Beechhurst - Flushing,EE352E,bus
+Q45,Fresh Meadows - Kew Gardens,61AD3C,bus
+Q75,Jamaica - QCC,B933AD,bus
+Q39,Long Island City - Glendale,61AD3C,bus
+Q29,Elmhurst - Glendale,61AD3C,bus
+Q67,Long Island City - Middle Village,61AD3C,bus
+Q14,East Elmhurst - Ridgewood,61AD3C,bus
+Q06,Jamaica - Sutphin Blvd - Jfk Cargo Area,EE352E,bus
+Q07,Cypress Hills - Rockaway Blvd - Jfk Travel Plz.,FAA61A,bus
+Q08,Gateway Mall / East Ny - Jamaica,EE352E,bus
+Q09,Jamaica - South Ozone Park,B933AD,bus
+Q10,Jfk Airtrain - Kew Gardens Via Rockaway,FAA61A,bus
+Q11,Howard Beach - Elmhurst,6CBE45,bus
+Q18,Astoria - Maspeth,FAA61A,bus
+Q19,Flushing - Astoria,FAA61A,bus
+Q22,Rockaway Beach Bl / Beach Channel Dr,EE352E,bus
+Q23,East Elmhurst - Forest Hills,FAA61A,bus
+Q25,College Point - Jamaica,FAA61A,bus
+Q26,College Point - Fresh Meadows,FAA61A,bus
+Q28,Flushing - Bay Terrace Rush,B933AD,bus
+Q32,Jackson Heights - Penn Station (Midtown),FAA61A,bus
+Q33,Marine Air Terminal Lga-Jackson Heights,FAA61A,bus
+Q35,Rockaway Park - Midwood / Brooklyn Coll.,006CB7,bus
+Q37,Kew Gardens - South Ozone Park,00AEEF,bus
+Q40,South Ozone Park - Jamaica,B933AD,bus
+Q41,Jamaica - Howard Beach,FAA61A,bus
+Q47,East Elmhurst - Glendale,FAA61A,bus
+Q49,East Elmhurst - Jackson Heights,FAA61A,bus
+Q50,Co-Op City/Pelham Bay - Flushing Ltd,EE352E,bus
+Q51,Linden Blvd Limited,EE352E,bus
+Q60,Queens Blvd. - East Midtown,FAA61A,bus
+Q63,Flushing - Long Island City Rush,B933AD,bus
+Q64,Electchester - Forest Hills,FAA61A,bus
+Q65,Flushing - Jamaica,FAA61A,bus
+Q66,Flushing - Long Island City,FAA61A,bus
+Q69,East Elmhurst - Long Island City,FAA61A,bus
+Q72,LaGuardia Airport - Rego Park,FAA61A,bus
+Q74,Forest Hills - Qcc Ltd,EE352E,bus
+Q80,JFK Airtrain - Kew Gardens Via Lefferts,EE352E,bus
+B100,Mill Basin - Midwood,B933AD,bus
+B103,Canarsie - Downtown Brooklyn Ltd,FAA61A,bus
+BM1,Mill Basin - Downtown/Midtown,00933C,bus
+BM2,Canarsie/Spring Creek - Downtown/Midtown,00933C,bus
+BM3,Sheepshead Bay - Downtown/Midtown,00933C,bus
+BM4,Gerritsen Beach - Downtown/Midtown,00933C,bus
+BM5,Spring Creek - Midtown,00933C,bus
+BX23,Pelham Bay - Co-Op City,B933AD,bus
+BXM1,Riverdale - East Midtown,00933C,bus
+BXM10,Williamsbridge/Morris Park - Midtown,00933C,bus
+BXM11,Wakefield - Midtown,00933C,bus
+BXM18,Riverdale - Downtown,00933C,bus
+BXM2,Riverdale - West Midtown,00933C,bus
+BXM3,Yonkers - Midtown,00933C,bus
+BXM4,Woodlawn - Midtown,00933C,bus
+BXM6,Parkchester - Midtown,00933C,bus
+BXM7,Co-Op City - Midtown,00933C,bus
+BXM8,Pelham Bay/City Island - Midtown,00933C,bus
+BXM9,Throgs Neck - Midtown Express,00933C,bus
+Q100,Rikers Island - Long Island City Ltd,EE352E,bus
+Q101,Steinway - Hunters Point,FAA61A,bus
+Q102,Roosevelt Island - Long Island City,FAA61A,bus
+Q103,Astoria - Hunters Point,FAA61A,bus
+Q104,Astoria - Sunnyside,FAA61A,bus
+Q110,Jamaica Avenue East,FAA61A,bus
+Q111,Rosedale - Jamaica Rush,B933AD,bus
+Q112,Jamaica - East Ny,EE352E,bus
+Q113,Far Rockaway - Jamaica Limited,EE352E,bus
+Q114,Far Rockaway - Jamaica Rush,B933AD,bus
+Q115,Brewer Blvd. Local,EE352E,bus
+QM1,Fresh Meadows - Midtown Express,00933C,bus
+QM10,Lefrak City - Midtown Express,00933C,bus
+QM11,Forest Hills - Downtown Express,00933C,bus
+QM12,Forest Hills - Midtown Express,00933C,bus
+QM15,Lindenwood - Midtown Express,00933C,bus
+QM16,Neponsit - Midtown Express,00933C,bus
+QM17,Far Rockaway - Midtown Express,00933C,bus
+QM18,South Ozone Park - Midtown Express,00933C,bus
+QM2,Bay Terrace - Midtown Express,00933C,bus
+QM20,Bay Terrace - Midtown Express,00933C,bus
+QM21,Rochdale Village - Midtown Exp.,00933C,bus
+QM24,Glendale - Midtown Express,00933C,bus
+QM25,Glendale - Downtown Express,00933C,bus
+QM31,Fresh Meadows - Midtown Express,00933C,bus
+QM32,Bay Terrace - Midtown Express,00933C,bus
+QM34,Glendale - Midtown Express,00933C,bus
+QM35,Glen Oaks - Midtown Express,00933C,bus
+QM36,Lake Success - Midtown Express,00933C,bus
+QM4,Electchester - Midtown Express,00933C,bus
+QM40,Lefrak City - Midtown Express,00933C,bus
+QM42,Forest Hills - Midtown Express,00933C,bus
+QM44,Electchester - Midtown Express,00933C,bus
+QM5,Glen Oaks - Midtown Express,00933C,bus
+QM6,Lake Success - Midtown Express,00933C,bus
+QM65,Laurelton-Rochdale-Lower Manhattan,00933C,bus
+QM7,Fresh Meadows - Downtown Express,00933C,bus
+QM8,Glen Oaks - Downtown Express,00933C,bus
+Q52+,Elmhurst - Arverne Sbs Vis Woodhaven/Cross Bay,006CB7,bus
+Q53+,Woodside - Rockaway Park,006CB7,bus
+Q70+,LaGuardia Link,006CB7,bus
