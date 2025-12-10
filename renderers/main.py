@@ -23,7 +23,7 @@ class MainRenderer:
         debug.info(self.data.trains)
         stops = len(self.data.trains.stops)
         stops_per_page = self.data.config.layout.coords("trains")["stops_per_page"]
-        for start in range(0, stops + stops_per_page - 1, stops_per_page):
+        for start in range(0, stops, stops_per_page):
             stop = min(start + stops_per_page, stops)
             self.__render_train_batch(any_of(timer_cond(25), scrolling_finished_cond(self.data)), start, stop)
 
