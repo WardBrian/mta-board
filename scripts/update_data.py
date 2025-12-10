@@ -29,7 +29,7 @@ def request_data(url: str) -> zipfile.ZipFile:
 def main() -> None:
 
     stops = ["stop_id,stop_name\n"]
-    routes = ["route_id,route_long_name,route_color,route_type\n"]
+    routes = ["route_id,route_short_name,route_long_name,route_color,route_type\n"]
 
     trains = True
 
@@ -47,7 +47,7 @@ def main() -> None:
             )
         for route in routes_dict:
             routes.append(
-                f'{route["route_id"]},{route["route_long_name"]},{route["route_color"]},{"train" if trains else "bus"}\n'
+                f'{route["route_id"]},{route["route_short_name"]},{route["route_long_name"]},{route["route_color"]},{"train" if trains else "bus"}\n'
             )
         trains = False
 

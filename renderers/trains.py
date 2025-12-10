@@ -50,9 +50,10 @@ def __render_line(canvas, font, x, y, d, name):
         DrawFilledCircle(canvas, x, y, d, color)
     else:
         DrawFilledRectangle(canvas, x - font["size"]["width"], y - d // 2 + 1,  font["size"]["width"] * 2 + 1, d -1, color)
-    text_x = center_text_position(name, x + 1, font["size"]["width"])
+    display_name = routes.ROUTE_NAME[name]
+    text_x = center_text_position(display_name, x + 1, font["size"]["width"])
     color = graphics.Color(255, 255, 255)
-    graphics.DrawText(canvas, font["font"], text_x, y + font["size"]["height"] // 2 - 1, color, name)
+    graphics.DrawText(canvas, font["font"], text_x, y + font["size"]["height"] // 2 - 1, color, display_name)
 
 
 def DrawFilledCircle(canvas, x, y, d, color):
