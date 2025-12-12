@@ -50,7 +50,7 @@ class Trains:
                     failed = True
 
                 if routes.ROUTE_TYPE[route] == "train":
-                    d = data[route]
+                    d = data.get(route, {})
                     for stop in stations:
                         _stops.append(Stop(route, stop, sorted(d.get(stop, [])), self.skip, self.num_trains))
                 else:
