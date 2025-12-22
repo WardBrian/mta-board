@@ -1,5 +1,5 @@
 import time
-from typing import NoReturn
+from typing import Callable, NoReturn
 
 import debug
 from data import Data
@@ -16,27 +16,46 @@ class MainRenderer:
 
     def render(self) -> NoReturn:
         while True:
-            self.__render_weather()
+            self.__render_weather(scrolling_finished_cond(self.data))
             self.__render_trains()
 
     def __render_trains(self):
         debug.info(self.data.trains)
-        for _ in range(120):
-            trains.render_trains(
-                self.canvas, self.data.config.layout, self.data.config.scoreboard_colors, self.data.trains
+        stops = len(self.data.trains.stops)
+        stops_per_page = self.data.config.layout.coords("trains")["stops_per_page"]
+        for start in range(0, stops, stops_per_page):
+            stop = min(start + stops_per_page, stops)
+            self.__render_train_batch(any_of(timer_cond(25), scrolling_finished_cond(self.data)), start, stop)
+
+    def __render_train_batch(self, cond, start, stop):
+
+        self.data.scrolling_finished = False
+        self.scrolling_text_pos = self.canvas.width
+
+        while cond():
+            pos = trains.render_trains(
+                self.canvas,
+                self.data.config.layout,
+                self.data.config.scoreboard_colors,
+                self.data.trains,
+                start,
+                stop,
+                self.scrolling_text_pos,
             )
+            self.__update_scrolling_text_pos(pos, self.canvas.width)
+
             # Show network issues
             if self.data.network_issues:
                 network.render_network_error(self.canvas, self.data.config.layout, self.data.config.scoreboard_colors)
             self.canvas = self.matrix.SwapOnVSync(self.canvas)
-            time.sleep(1)
+            time.sleep(self.data.config.scrolling_speed)
 
     # Render an offday screen with the weather, clock and news
-    def __render_weather(self):
+    def __render_weather(self, cond):
         self.data.scrolling_finished = False
         self.scrolling_text_pos = self.canvas.width
 
-        while not self.data.scrolling_finished:
+        while cond():
 
             self.__max_scroll_x(self.data.config.layout.coords("offday.scrolling_text"))
             pos = weather.render_weather_screen(
@@ -66,4 +85,33 @@ class MainRenderer:
             self.data.scrolling_finished = True
             self.scrolling_text_pos = end
         else:
+            self.data.scrolling_finished = False
             self.scrolling_text_pos = pos_after_scroll
+
+
+def timer_cond(seconds) -> Callable[[], bool]:
+    """Create a condition that is true for the specified number of seconds"""
+    end = time.time() + seconds
+
+    def cond():
+        return time.time() < end
+
+    return cond
+
+
+def scrolling_finished_cond(data: Data) -> Callable[[], bool]:
+    """Create a condition that is true when scrolling is finished"""
+
+    def cond():
+        return not data.scrolling_finished
+
+    return cond
+
+
+def any_of(*conds) -> Callable[[], bool]:
+    """Create a condition that is true if any of the given conditions are true"""
+
+    def cond():
+        return any(c() for c in conds)
+
+    return cond

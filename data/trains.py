@@ -6,11 +6,11 @@ from underground import SubwayFeed
 
 
 import debug
-from data import stops
+from data import routes, stops
 from data.config import Config
 from data.update import UpdateStatus
 
-TRAINS_UPDATE_RATE = 60
+TRAINS_UPDATE_RATE = 90
 
 
 class Trains:
@@ -29,25 +29,43 @@ class Trains:
     def update(self, force: bool = False):
         if force or self.__should_update():
             debug.log("Trains should update!")
-            self.starttime = time.time()
             _stops = []
             failed = False
-            for (route, stations) in self.routes:
-                d = {}
+
+            seen = set()
+            for route, stations in self.routes:
+                if route in seen:
+                    continue
+                seen.add(route)
+
+                data = {}
                 try:
                     feed = SubwayFeed.get(route)
                     try:
-                        d = feed.extract_stop_dict().get(route, {})
+                        data = feed.extract_stop_dict()
                     except:
                         debug.exception("Serialization error while refreshing train data")
                 except:
                     debug.exception("Networking Error while refreshing train data")
                     failed = True
 
-                _stops += [Stop(route, stop, sorted(d.get(stop, [])), self.skip, self.num_trains) for stop in stations]
+                if routes.ROUTE_TYPE[route] == "train":
+                    d = data.get(route, {})
+                    for stop in stations:
+                        _stops.append(Stop(route, stop, sorted(d.get(stop, [])), self.skip, self.num_trains))
+                else:
+                    # optimization: buses share the same feed, so don't load it a bunch of times!
+                    for route, stations in self.routes:
+                        if route in data:
+                            seen.add(route)
+                            d = data[route]
+                            for stop in stations:
+                                _stops.append(Stop(route, stop, sorted(d.get(stop, [])), self.skip, self.num_trains))
 
             self.stops = _stops
 
+            debug.log("Updated trains!")
+            self.starttime = time.time()
             if failed:
                 return UpdateStatus.FAIL
 

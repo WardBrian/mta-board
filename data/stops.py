@@ -1,10 +1,10 @@
-with open("data/stops.txt", "r") as f:
+with open("data/stops.csv", "r") as f:
     f.readline()
     _stops = f.readlines()
 
-_stops = [line.split(",") for line in _stops]
+_stops = [line.strip().split(",") for line in _stops]
 
-ID_STOPS = {stop[0]: stop[2] for stop in _stops}
+ID_STOPS = {stop[0]: stop[1].title() for stop in _stops}
 del _stops
 
 
