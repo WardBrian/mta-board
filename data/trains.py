@@ -56,9 +56,9 @@ class Trains:
                 else:
                     # optimization: buses share the same feed, so don't load it a bunch of times!
                     for route, stations in self.routes:
-                        if route in data:
+                        if routes.ROUTE_TYPE[route] == "bus":
                             seen.add(route)
-                            d = data[route]
+                            d = data.get(route, {})
                             for stop in stations:
                                 _stops.append(Stop(route, stop, sorted(d.get(stop, [])), self.skip, self.num_trains))
 
