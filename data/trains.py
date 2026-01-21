@@ -39,21 +39,15 @@ class Trains:
                 seen.add(route)
 
                 data = {}
-                try:
-                    feed = SubwayFeed.get(route)
-                    try:
-                        data = feed.extract_stop_dict()
-                    except:
-                        debug.exception("Serialization error while refreshing train data")
-                except:
-                    debug.exception("Networking Error while refreshing train data")
-                    failed = True
 
                 if routes.ROUTE_TYPE[route] == "train":
+                    failed, data = _get_feed(route)
+
                     d = data.get(route, {})
                     for stop in stations:
                         _stops.append(Stop(route, stop, sorted(d.get(stop, [])), self.skip, self.num_trains))
                 else:
+                    failed, data = _get_feed("BUS")
                     # optimization: buses share the same feed, so don't load it a bunch of times!
                     for route, stations in self.routes:
                         if routes.ROUTE_TYPE[route] == "bus":
@@ -82,6 +76,16 @@ class Trains:
         trains = "\n\t".join(str(s) for s in self.stops)
         return "Trains: \n\t" + trains
 
+def _get_feed(route):
+    try:
+        feed = SubwayFeed.get(route)
+        try:
+            return False, feed.extract_stop_dict()
+        except:
+            debug.exception("Serialization error while refreshing train data")
+    except:
+        debug.exception("Networking Error while refreshing train data")
+        return True, {}
 
 class Stop:
     def __init__(self, route, stop, trains, skip, num_show):
