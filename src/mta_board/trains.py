@@ -2,22 +2,18 @@ import time
 from datetime import datetime
 
 from tzlocal import get_localzone
+from bullpen.api import UpdateStatus, PluginData
+from bullpen.logging import LOGGER
 from underground import SubwayFeed
 
 
-import debug
-from data import routes, stops
-from data.config import Config
-from data.update import UpdateStatus
+from . import routes, stops
+from .config import Config
 
 TRAINS_UPDATE_RATE = 90
 
 
-class Trains:
-    @staticmethod
-    def get_trains(config):
-        trains = Trains(config)
-        return trains, trains.update(True)
+class Trains(PluginData):
 
     def __init__(self, config: Config):
         self.starttime = time.time()
@@ -25,10 +21,11 @@ class Trains:
         self.skip = config.skip_next
         self.num_trains = config.num_trains
         self.stops = []
+        self.update(True)
 
     def update(self, force: bool = False):
         if force or self.__should_update():
-            debug.log("Trains should update!")
+            LOGGER.debug("Trains should update!")
             _stops = []
             failed = False
 
@@ -58,7 +55,7 @@ class Trains:
 
             self.stops = _stops
 
-            debug.log("Updated trains!")
+            LOGGER.debug("Updated trains!")
             self.starttime = time.time()
             if failed:
                 return UpdateStatus.FAIL
@@ -76,16 +73,18 @@ class Trains:
         trains = "\n\t".join(str(s) for s in self.stops)
         return "Trains: \n\t" + trains
 
+
 def _get_feed(route):
     try:
         feed = SubwayFeed.get(route)
         try:
             return False, feed.extract_stop_dict()
         except:
-            debug.exception("Serialization error while refreshing train data")
+            LOGGER.exception("Serialization error while refreshing train data")
     except:
-        debug.exception("Networking Error while refreshing train data")
+        LOGGER.exception("Networking Error while refreshing train data")
         return True, {}
+
 
 class Stop:
     def __init__(self, route, stop, trains, skip, num_show):

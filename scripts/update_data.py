@@ -52,9 +52,9 @@ def main() -> None:
         trains = False
 
 
-    with open("data/stops.csv", "w") as stops_file:
+    with open("src/mta_board/stops.csv", "w") as stops_file:
         stops_file.writelines(list(dict.fromkeys(stops)))
-    with open("data/routes.csv", "w") as routes_file:
+    with open("src/mta_board/routes.csv", "w") as routes_file:
         routes_file.writelines(list(dict.fromkeys(routes)))
 
 

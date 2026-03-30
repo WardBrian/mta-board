@@ -1,4 +1,6 @@
-with open("data/stops.csv", "r") as f:
+from importlib.resources import files
+
+with files("mta_board").joinpath("stops.csv").open("r") as f:
     f.readline()
     _stops = f.readlines()
 
