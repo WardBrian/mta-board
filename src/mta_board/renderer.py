@@ -26,6 +26,9 @@ class Renderer(PluginRenderer):
     def wait_time(self) -> float:
         return self.config.scrolling_speed
 
+    def can_render(self, data: Trains) -> bool:
+        return bool(data.stops)
+
     def render(self, data: Trains, canvas: "Canvas", graphics, scrolling_text_pos: int) -> None:
         stops = len(data.stops)
         if scrolling_text_pos == canvas.width:
