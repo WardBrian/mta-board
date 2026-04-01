@@ -15,16 +15,29 @@ if TYPE_CHECKING:
 
 class Renderer(PluginRenderer):
     def __init__(self, config: Config, layout: Layout, colors: Color) -> None:
-        self.config = config
-        self.layout = layout
-        self.colors = colors
+        self.scrolling_speed = config.scrolling_speed
 
         self.scrolls = -1
         self.start = 0
         self.stops_per_page = layout.coords("trains").get("stops_per_page", 2)
 
+        self.offset = layout.coords("trains")["offset"]
+
+        self.bg = colors.graphics_color("default.background")
+
+        self.eta_coords = layout.coords("trains.eta")
+        self.eta_font = layout.font("trains.eta")
+        self.eta_color = colors.graphics_color("trains.eta")
+
+        self.stop_coords = layout.coords("trains.stop")
+        self.stop_font = layout.font("trains.stop")
+        self.stop_color = colors.graphics_color("trains.stop")
+
+        self.line_coords = layout.coords("trains.line")
+        self.line_font = layout.font("trains.line")
+
     def wait_time(self) -> float:
-        return self.config.scrolling_speed
+        return self.scrolling_speed
 
     def can_render(self, data: Trains) -> bool:
         return bool(data.stops)
@@ -40,56 +53,58 @@ class Renderer(PluginRenderer):
                 LOGGER.debug("Moving to trains starting at stop %d", self.start)
 
         end = min(self.start + self.stops_per_page, stops)
-        return render_trains(canvas, graphics, self.layout, self.colors, data, self.start, end, scrolling_text_pos)
+        return self.__render_trains(canvas, graphics, data, self.start, end, scrolling_text_pos)
+
+    def __render_trains(self, canvas: "Canvas", graphics, trains: Trains, first_stop, last_stop, text_pos):
+        canvas.Fill(self.bg.red, self.bg.green, self.bg.blue)
+
+        offset = 0
+        position = 0
+        for t in range(first_stop, last_stop):
+            stop = trains.stops[t]
+            pos = self.__render_stop(canvas, graphics, offset, stop, text_pos)
+            position = max(pos, position)
+            offset += self.offset
+
+        return position
+
+    def __render_stop(self, canvas, graphics, offset, stop: Stop, text_pos):
+
+        graphics.DrawText(
+            canvas,
+            self.eta_font["font"],
+            self.eta_coords["x"],
+            self.eta_coords["y"] + offset,
+            self.eta_color,
+            stop.next_trains_string(),
+        )
+
+        pos = scrolling_text(
+            canvas,
+            graphics,
+            self.stop_coords["x"],
+            self.stop_coords["y"] + offset,
+            self.stop_coords["width"],
+            self.stop_font,
+            self.stop_color,
+            self.bg,
+            stop.stop_name(),
+            text_pos,
+        )
+
+        render_line(
+            canvas,
+            graphics,
+            self.line_font,
+            self.line_coords["x"],
+            self.line_coords["y"] + offset,
+            self.line_coords["radius"],
+            stop.route,
+        )
+        return pos
 
 
-def render_trains(
-    canvas: "Canvas", graphics, layout: Layout, colors: Color, trains: Trains, first_stop, last_stop, text_pos
-):
-    color = colors.color("default.background")
-    canvas.Fill(color["r"], color["g"], color["b"])
-
-    offset = 0
-    position = 0
-    for t in range(first_stop, last_stop):
-        stop = trains.stops[t]
-        pos = __render_stop(canvas, graphics, layout, colors, offset, stop, text_pos)
-        position = max(pos, position)
-        offset += layout.coords("trains")["offset"]
-
-    return position
-
-
-def __render_stop(canvas, graphics, layout, colors: Color, offset, stop: Stop, text_pos):
-    coords = layout.coords("trains.eta")
-    font = layout.font("trains.eta")
-    color = colors.graphics_color("trains.eta")
-    graphics.DrawText(canvas, font["font"], coords["x"], coords["y"] + offset, color, stop.next_trains_string())
-
-    coords = layout.coords("trains.stop")
-    font = layout.font("trains.stop")
-    name = stop.stop_name()
-    bgcolor = colors.graphics_color("default.background")
-
-    pos = scrolling_text(
-        canvas, graphics, coords["x"], coords["y"] + offset, coords["width"], font, color, bgcolor, name, text_pos
-    )
-
-    coords = layout.coords("trains.line")
-    __render_line(
-        canvas,
-        graphics,
-        layout.font("trains.line"),
-        coords["x"],
-        coords["y"] + offset,
-        coords["radius"],
-        colors.graphics_color("trains.line"),
-        stop.route,
-    )
-    return pos
-
-
-def __render_line(canvas, graphics, font, x, y, d, color, name):
+def render_line(canvas, graphics, font, x, y, d, name):
 
     line_color = routes.ROUTE_COLOR[name]
     if routes.ROUTE_TYPE[name] == "train":
@@ -100,6 +115,7 @@ def __render_line(canvas, graphics, font, x, y, d, color, name):
         )
     display_name = routes.ROUTE_NAME[name]
     text_x = center_text_position(display_name, x + 1, font["size"]["width"])
+    color = graphics.Color(255, 255, 255)
     graphics.DrawText(canvas, font["font"], text_x, y + font["size"]["height"] // 2 - 1, color, display_name)
 
 
