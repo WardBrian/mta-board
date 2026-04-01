@@ -107,7 +107,7 @@ class Stop:
             return "Arr"
         return f"{minutes}m"
 
-    def next_train(self):
+    def next_trains_string(self):
         now = datetime.now(tz=get_localzone())
         times = []
         try:
@@ -130,4 +130,4 @@ class Stop:
         return (" " if n_times != 1 else "") + (", ".join(self.format_time(t, len(times)) for t in times))
 
     def __str__(self):
-        return f"{self.route}:{self.stop_name()}:{self.next_train()}"
+        return f"{self.route}:{self.stop_name()}:{self.next_trains_string()}"

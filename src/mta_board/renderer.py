@@ -43,26 +43,28 @@ class Renderer(PluginRenderer):
         return render_trains(canvas, graphics, self.layout, self.colors, data, self.start, end, scrolling_text_pos)
 
 
-def render_trains(canvas, graphics, layout: Layout, colors: Color, trains: Trains, first_stop, last_stop, text_pos):
+def render_trains(
+    canvas: "Canvas", graphics, layout: Layout, colors: Color, trains: Trains, first_stop, last_stop, text_pos
+):
     color = colors.color("default.background")
     canvas.Fill(color["r"], color["g"], color["b"])
 
     offset = 0
-    positions = []
+    position = 0
     for t in range(first_stop, last_stop):
         stop = trains.stops[t]
-        pos, new_offset = __render_stop(canvas, graphics, layout, colors, offset, stop, text_pos)
-        offset += new_offset
-        positions.append(pos)
+        pos = __render_stop(canvas, graphics, layout, colors, offset, stop, text_pos)
+        position = max(pos, position)
+        offset += layout.coords("trains")["offset"]
 
-    return max(positions)
+    return position
 
 
-def __render_stop(canvas, graphics, layout, colors, offset, stop: Stop, text_pos):
+def __render_stop(canvas, graphics, layout, colors: Color, offset, stop: Stop, text_pos):
     coords = layout.coords("trains.eta")
     font = layout.font("trains.eta")
-    color = graphics.Color(255, 255, 255)
-    graphics.DrawText(canvas, font["font"], coords["x"], coords["y"] + offset, color, stop.next_train())
+    color = colors.graphics_color("trains.eta")
+    graphics.DrawText(canvas, font["font"], coords["x"], coords["y"] + offset, color, stop.next_trains_string())
 
     coords = layout.coords("trains.stop")
     font = layout.font("trains.stop")
@@ -75,27 +77,33 @@ def __render_stop(canvas, graphics, layout, colors, offset, stop: Stop, text_pos
 
     coords = layout.coords("trains.line")
     __render_line(
-        canvas, graphics, layout.font("trains.line"), coords["x"], coords["y"] + offset, coords["radius"], stop.route
+        canvas,
+        graphics,
+        layout.font("trains.line"),
+        coords["x"],
+        coords["y"] + offset,
+        coords["radius"],
+        colors.graphics_color("trains.line"),
+        stop.route,
     )
-    return pos, layout.coords("trains")["offset"]
+    return pos
 
 
-def __render_line(canvas, graphics, font, x, y, d, name):
+def __render_line(canvas, graphics, font, x, y, d, color, name):
 
-    color = routes.ROUTE_COLOR[name]
+    line_color = routes.ROUTE_COLOR[name]
     if routes.ROUTE_TYPE[name] == "train":
-        DrawFilledCircle(canvas, x, y, d, color)
+        DrawFilledCircle(canvas, x, y, d, line_color)
     else:
         DrawFilledRectangle(
-            canvas, x - font["size"]["width"], y - d // 2 + 1, font["size"]["width"] * 2 + 1, d - 1, color
+            canvas, x - font["size"]["width"], y - d // 2 + 1, font["size"]["width"] * 2 + 1, d - 1, line_color
         )
     display_name = routes.ROUTE_NAME[name]
     text_x = center_text_position(display_name, x + 1, font["size"]["width"])
-    color = graphics.Color(255, 255, 255)
     graphics.DrawText(canvas, font["font"], text_x, y + font["size"]["height"] // 2 - 1, color, display_name)
 
 
-def DrawFilledCircle(canvas, x, y, d, color):
+def DrawFilledCircle(canvas: "Canvas", x, y, d, color):
     ri = d // 2
     r = d / 2
     for xi in range(x - ri - 1, x + ri + 1):
@@ -108,7 +116,7 @@ def DrawFilledCircle(canvas, x, y, d, color):
                 canvas.SetPixel(xi, yi, *color)
 
 
-def DrawFilledRectangle(canvas, x, y, width, height, color):
+def DrawFilledRectangle(canvas: "Canvas", x, y, width, height, color):
     for xi in range(x, x + width):
         for yi in range(y, y + height):
             canvas.SetPixel(xi, yi, *color)
