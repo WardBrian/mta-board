@@ -9,6 +9,30 @@ won't add any more features!
 
 ## Example config
 
+`config.json`:
+
+```json
+{
+  "rotation": {
+    "screens": [
+      { "kind": "trains", "seconds": 20, "with_priority": 0 }
+    ]
+  },
+  "plugins": {
+    "example": {
+      "step": 3
+    },
+    "trains": {
+      "skip_next_trains": 0,
+      "num_trains": 3,
+      "stops": {
+        "6": ["631N"]
+      }
+    }
+  }
+}
+```
+
 `colors/scoreboard.json`:
 ```json
 {
