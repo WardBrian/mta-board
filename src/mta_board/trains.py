@@ -10,7 +10,7 @@ from underground import SubwayFeed
 from . import routes, stops
 from .config import Config
 
-TRAINS_UPDATE_RATE = 90
+TRAINS_UPDATE_RATE = 180
 
 
 class Trains(PluginData):
