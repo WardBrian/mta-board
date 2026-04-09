@@ -1,6 +1,9 @@
 from PIL import ImageColor
 
-with open("data/routes.csv", "r") as f:
+from importlib.resources import files
+
+
+with files("mta_board").joinpath("routes.csv").open("r") as f:
     f.readline()
     _routes = f.readlines()
 

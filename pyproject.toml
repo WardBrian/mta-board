@@ -1,2 +1,22 @@
+[build-system]
+requires = ["setuptools >= 77.0.3"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "mta-board"
+version = "0.1.0"
+dependencies = ["underground", "Pillow>=10.0.1,<12.0.0"]
+
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.entry-points.'bullpen.mlbled.plugin']
+"trains" = "mta_board:load"
+
+[tool.setuptools.package-data]
+"*" = ["*.csv"]
+
 [tool.black]
 line-length = 120
