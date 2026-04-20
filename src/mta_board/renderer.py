@@ -48,7 +48,7 @@ class Renderer(PluginRenderer):
             self.scrolls += 1
             if self.scrolls and self.scrolls % 2 == 0:
                 self.start += self.stops_per_page
-                if self.start > stops:
+                if self.start >= stops:
                     self.start = 0
                 LOGGER.debug("Moving to trains starting at stop %d", self.start)
 
