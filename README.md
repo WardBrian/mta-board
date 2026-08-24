@@ -35,6 +35,8 @@ won't add any more features!
 }
 ```
 
+To find train/stop IDs, consider using [`underground findstops`](https://github.com/nolanbconaway/underground#findstops)
+
 `colors/scoreboard.json`:
 ```json
 {
