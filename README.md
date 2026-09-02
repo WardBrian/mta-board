@@ -1,5 +1,8 @@
 # mta-board
 
+> [!IMPORTANT]
+> This package is in the https://github.com/MLB-LED-Scoreboard/plugins repository. This repo is mostly for my own hacking!
+
 Show the upcoming trains.
 
 A plugin for [mlb-led-scoreboard](https://github.com/WardBrian/mlb-led-scoreboard).
